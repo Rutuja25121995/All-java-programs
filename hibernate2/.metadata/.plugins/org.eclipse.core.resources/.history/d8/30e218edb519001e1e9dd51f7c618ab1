@@ -1,0 +1,31 @@
+package com.tech;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+
+public class test_select_HQL {
+
+	public static void main(String[] args) {
+		Configuration cfg=new Configuration();
+		cfg.configure("hibernate-cfg.xml");
+		
+		SessionFactory sf=cfg.buildSessionFactory();
+		Session session=sf.openSession();
+		
+		//String hql_query="from employeeNew";
+		String hql_query="from employeeNew where id=1";
+		Query query=session.createQuery(hql_query);
+		Transaction txn=session.beginTransaction();
+		employeeNew emp= (employeeNew) query.uniqueResult();
+		//List elist=query.list();
+		System.out.println(elist);
+		txn.commit();
+	}
+
+}

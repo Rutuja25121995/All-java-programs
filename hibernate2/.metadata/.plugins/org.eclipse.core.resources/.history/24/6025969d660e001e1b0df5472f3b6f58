@@ -1,0 +1,29 @@
+package com.tech;
+
+import java.util.List;
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+@Entity
+@Table(name="student_one_to_one")
+public class Student {
+	@Id
+	@GeneratedValue
+	@Column
+	private int sid;
+	@Column
+	private String sname;
+	@Column
+	@OneToOne  
+	private Address address;
+	
+		
+	
+
+}

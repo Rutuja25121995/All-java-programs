@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="sign_up">
+Username:<input type="text"name="uname"><br><br>
+password:<input type="text"name="password"><br><br>
+<input type=submit value="sign_up">
+</form>
+</body>
+</html>

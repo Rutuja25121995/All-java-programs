@@ -1,0 +1,62 @@
+package com.tech;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+@Entity
+@Table(name="student_one_to_one")
+public class Student {
+	@Id
+	@GeneratedValue
+	@Column
+	private int sid;
+	@Column
+	private String sname;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="sid")
+	@Column
+	private List<Address> address;
+	
+	public Student() {
+		super();
+		
+	}
+	public Student(int id, String name, List<Address> address) {
+		super();
+		this.sid = id;
+		this.sname = name;
+		this.address = address;
+	}
+	public int getId() {
+		return sid;
+	}
+	public void setId(int sid) {
+		this.sid = sid;
+	}
+	public String getName() {
+		return sname;
+	}
+	public void setName(String sname) {
+		this.sname = sname;
+	}
+	public List<Address> getAddress() {
+		return address;
+	}
+	public void setAddress(List<Address> address) {
+		this.address = address;
+	}
+	@Override
+	public String toString() {
+		return "Student [sid=" + sid + ", sname=" + sname + ", address=" + address + "]";
+	}
+	
+	
+
+}

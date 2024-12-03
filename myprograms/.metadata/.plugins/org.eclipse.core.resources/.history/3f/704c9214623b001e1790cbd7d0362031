@@ -1,0 +1,10 @@
+package com.tech;
+
+import javax.servlet.http.HttpServlet;
+
+public class jdbc_joins_servlet  extends HttpServlet{
+	public jdbc_joins_servlet() {
+		System.out.println("inside jdbc_joins_servlet constructor");
+	}
+
+}

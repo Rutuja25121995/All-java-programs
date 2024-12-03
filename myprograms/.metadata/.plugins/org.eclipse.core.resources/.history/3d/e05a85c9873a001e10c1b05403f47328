@@ -1,0 +1,10 @@
+package com.database.connectivity;
+
+public class Database_Connectivity {
+
+	public static void main(String[] args) {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+
+	}
+
+}

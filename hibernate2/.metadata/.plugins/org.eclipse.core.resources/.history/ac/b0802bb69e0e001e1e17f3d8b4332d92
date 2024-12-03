@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type=submit value="sign_up"><a>signup</a><br><br>
+<input type=submit value="sign_in">
+</body>
+</html>

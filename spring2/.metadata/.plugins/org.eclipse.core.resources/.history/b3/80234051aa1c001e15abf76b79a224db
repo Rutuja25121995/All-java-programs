@@ -1,0 +1,9 @@
+package com.tech;
+
+public class string_rev {
+public static void main(String[] args) {
+	String str="I LOVE JAVA PROGRAM VERY MUCH";
+	String[] str1 =str.split(" ");
+	System.out.println(str1);
+}
+}

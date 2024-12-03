@@ -1,0 +1,12 @@
+package com.tech.dao;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class Employee_Dao {
+
+	public Employee_Dao() {
+		System.out.println("inside Employee_Dao constructor");
+	}
+
+}

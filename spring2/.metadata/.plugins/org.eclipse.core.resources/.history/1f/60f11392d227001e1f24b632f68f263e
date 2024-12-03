@@ -1,0 +1,9 @@
+package aaaaa;
+
+public class a {
+public static void main(String[] args) {
+	String s="my name is rutuja rutuja is learning java";
+	String[] arr=s.split(" ");
+	System.out.println(arr);
+}
+}

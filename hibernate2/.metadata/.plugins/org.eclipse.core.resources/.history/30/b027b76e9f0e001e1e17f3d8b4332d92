@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="sign_up">
+First Name:<input type="text"name="fname">
+Last Name:<input type="text"name="lname">
+email_id:<input type="text"name="email">
+mobile_no:<input type="text"name="mobileno">
+</form>
+</body>
+</html>

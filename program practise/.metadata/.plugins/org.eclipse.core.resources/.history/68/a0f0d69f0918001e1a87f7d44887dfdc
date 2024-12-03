@@ -1,0 +1,12 @@
+package com.tech.String;
+
+public class anagram {
+	public static void main(String[] args) {
+
+		String str="race";
+		String str1="care";
+		if(str.length()==str1.length()) {
+			
+		}
+	}
+}

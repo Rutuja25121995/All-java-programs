@@ -1,0 +1,8 @@
+package com.tech.service;
+
+public class Employee_Service {
+
+	public Employee_Service() {
+		System.out.println("inside Employee_Service constructor");
+
+}

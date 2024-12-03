@@ -1,0 +1,6 @@
+package com.tech;
+
+public interface Registration {
+	public String StudentDetails(String name);
+
+}

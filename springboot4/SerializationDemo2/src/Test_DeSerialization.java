@@ -1,0 +1,37 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
+public class Test_DeSerialization {
+
+	public static void main(String[] args) {
+		Student s = new Student();
+		s.setId(1);
+		s.setName("aaa");
+
+		try {
+
+			FileInputStream fis = new FileInputStream("abc.txt");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			//Student2 s1 = (Student2) ois.readObject(); // it is not working as we serialize the Student class and 
+			// here you are expecting the Student2 --> java.io.InvalidClassException
+			Student s1 = (Student) ois.readObject();
+			System.out.println("data read from deserialization");
+			System.out.println(s1.getId());
+			System.out.println(s1.getName());
+			System.out.println(s1.getEmail());
+			System.out.println(s1.getMobilenumber());
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+}

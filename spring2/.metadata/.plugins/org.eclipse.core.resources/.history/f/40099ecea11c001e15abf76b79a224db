@@ -1,0 +1,20 @@
+package com.tech.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class Employee_Controller {
+
+	public Employee_Controller() {
+		System.out.println("inside Employee_Controller constructor");
+	}
+	
+	@RequestMapping("/create")
+	public void createEmployee(@RequestParam ("fname") String fname,
+			@RequestParam ("lname") String fname,
+			@RequestParam ("email") String fname,
+			@RequestParam ("phone") String fname,)
+
+}

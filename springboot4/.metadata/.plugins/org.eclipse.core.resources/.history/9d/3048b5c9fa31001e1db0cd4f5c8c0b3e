@@ -1,0 +1,27 @@
+package com.tech;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class Test_Serializable {
+
+	public static void main(String[] args) {
+		try {
+			FileOutputStream fos=new FileOutputStream("abc.txt");
+			
+				ObjectOutputStream oos=new ObjectOutputStream(fos);
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

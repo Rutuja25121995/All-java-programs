@@ -1,0 +1,9 @@
+package com.tech.controller;
+
+public class Employee_Controller {
+
+	public Employee_Controller() {
+		System.out.println("inside Employee_Controller constructor");
+	}
+
+}

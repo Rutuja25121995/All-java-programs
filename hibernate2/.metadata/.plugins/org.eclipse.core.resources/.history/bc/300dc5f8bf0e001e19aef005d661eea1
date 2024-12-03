@@ -1,0 +1,51 @@
+package com.tech;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
+
+public class login_servlet extends HttpServlet {
+
+	public login_servlet() {
+		System.out.println("inside constructor");
+	}
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String username = req.getParameter("uname");
+		String password = req.getParameter("password");
+
+		System.out.println(username);
+		System.out.println(password);
+
+		Configuration cfg = new Configuration();
+		cfg.configure("hibernate-cfg.xml");
+
+		SessionFactory sf = cfg.buildSessionFactory();
+		Session session = sf.openSession();
+
+		Criteria cr = session.createCriteria(student.class);
+		Criterion criterion = Restrictions.eq("id",1);
+		cr.add(criterion);
+
+		List<student> slist = cr.list();
+		for (student s1 : slist) {
+			System.out.println(s1.getId());
+			System.out.println(s1.getUsername());
+			System.out.println(s1.getPassword());
+		}
+	}
+
+}

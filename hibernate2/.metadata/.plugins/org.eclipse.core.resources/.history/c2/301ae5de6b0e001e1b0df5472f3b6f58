@@ -1,0 +1,13 @@
+package com.tech;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
+
+@Entity
+@Table(name = "VOTER")
+public class Voter {
+
+	
+}

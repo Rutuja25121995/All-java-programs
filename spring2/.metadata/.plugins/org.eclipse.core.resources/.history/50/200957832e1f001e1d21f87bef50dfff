@@ -1,0 +1,53 @@
+package com.tech.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.tech.dto.Employee;
+import com.tech.service.Employee_Service;
+
+@Controller
+public class Employee_Controller {
+
+	public Employee_Controller() {
+		System.out.println("inside Employee_Controller constructor");
+	}
+
+	@Autowired
+	Employee_Service employee_service;
+
+	@RequestMapping("/createemp")
+	public ModelAndView createEmployee(@RequestParam("fname") String firstname, @RequestParam("lname") String lastname,
+			@RequestParam("email") String email, @RequestParam("phone") String phone) {
+		Employee emp = new Employee();
+		emp.setFirstname(firstname);
+		emp.setLastname(lastname);
+		emp.setEmail(email);
+		emp.setPhone(phone);
+		boolean record = employee_service.createEmployee(emp);
+		if (record) {
+			ModelAndView mav = new ModelAndView("create_success");
+			return mav;
+		} else {
+			ModelAndView mav = new ModelAndView("create_failure");
+			return mav;
+		}
+
+	}
+	@RequestMapping("/getAllEmployee")
+	public ModelAndView getAllEmployee() {
+		System.out.println("inside EmployeeController.getAllEmployee ");
+
+		List<Employee> emplist = employee_service.getAllEmployee();
+
+		ModelAndView mav = new ModelAndView("get-all-employee");
+		mav.addObject("EMP_LIST", emplist);
+		return mav;
+	}
+
+}

@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+/**
+ * @author shree
+ *
+ */
+module Setter_Dependecy_injection {
+	requires org.springframework.context;
+}

@@ -1,0 +1,103 @@
+package com.example.demo.servie;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+import com.example.demo.dto.Student;
+import com.example.demo.exception.StudetNotFound;
+
+@Service
+public class StudentService {
+
+	public StudentService() {
+		System.out.println("inside StudentService constructor");
+	}
+
+	@Autowired
+	StudentDao studentDao;
+
+	public Student createStudent(Student student) {
+		System.out.println("inside studentDao.createStudent()" + student);
+		Student stud = studentDao.save(student);
+		System.out.println("student saved in database");
+		return stud;
+
+	}
+
+	public Iterable<Student> getAllStudent() {
+		System.out.println("inside studentDao.getAllStudent()");
+		Iterable<Student> studlist = studentDao.findAll();
+		return studlist;
+	}
+
+	public String deleteStudent(int id) {
+		System.out.println("inside studentDao.deleteStudent()");
+		Optional<Student> recordsFromDB = studentDao.findById(id);
+		System.out.println("records present in id-->" + recordsFromDB);
+		if (recordsFromDB.isPresent()) {
+			Student studentity = new Student();
+			studentity.setId(id);
+			studentDao.delete(studentity);
+			return "Student deleted for id=" + id;
+		} else {
+			return "Student not deleted as id=" + id + "is not present in DB";
+		}
+	}
+
+	public Student updateStudent(Student studentinput) {
+		System.out.println("inside studentDao.updateStudent()");
+		Optional<Student> studentfromdb=studentDao.findById(studentinput.getId());
+		if(studentfromdb.isPresent()) {
+			System.out.println("student present in db");
+			Student supdate=new Student();
+			Student s1=studentfromdb.get();
+			supdate.setId(studentfromdb.get().getId());
+			if (studentinput.getFname()!=null) {
+				System.out.println("fname is given from user");
+				supdate.setFname(studentinput.getFname());
+			}
+			
+		else {
+			System.out.println("fname take from db");
+			supdate.setFname(s1.getFname());
+			
+		}
+			if (studentinput.getLname()!=null) {
+				System.out.println("lname is given from user");
+				supdate.setLname(studentinput.getLname());
+			}
+			
+		else {
+			System.out.println("lname  take from db");
+			supdate.setLname(s1.getLname());
+			
+		}
+			if (studentinput.getEmail()!=null) {
+				System.out.println("email is given from user");
+				supdate.setEmail(studentinput.getEmail());
+			}
+			
+		else {
+			System.out.println("email  take from db");
+			supdate.setEmail(s1.getEmail());
+			
+		}
+			System.out.println("student object is to be updated--->"+supdate);
+			Student std=studentDao.save(supdate);
+			return std;
+	}else {
+		
+		throw new StudetNotFound("record not found for id---->"+studentinput.getId());
+		
+	}
+		 
+
+	}
+	public Optional<Student> getStudentbyid(int id) {
+		Optional<Student> student = studentDao.findById(id);
+		return student;
+	}
+	}

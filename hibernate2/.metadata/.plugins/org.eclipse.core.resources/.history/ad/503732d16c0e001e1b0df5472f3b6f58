@@ -1,0 +1,30 @@
+package com.tech;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+
+@Entity
+@Table(name="vote")
+public class Vote {
+	@Id
+	@GeneratedValue
+	@Column
+	
+	private int id;
+	@Column
+	private String partyName;
+	@Column
+	private Date electionDate;
+	
+	@OneToOne(targetEntity = Voter.class)
+	private Voter voter;
+
+}

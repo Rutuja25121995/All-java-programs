@@ -1,0 +1,16 @@
+package com.tech.dto;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="employee_table")
+public class Employee {
+
+	private int id;
+	
+	private String firstname;
+	private String lastname;
+	private String email;
+	private String phone;
+}

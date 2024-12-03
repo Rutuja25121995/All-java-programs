@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="e" class="com.tech.Employee">
+	<property name="name" value="Rutuja"></property>
+	<property name="city">
+	<list>
+	<value>Mumbai</value>
+	<value>Pune</value>
+	<value>Delhi</value>
+	<value>Chennai</value>
+	<value>Delhi</value>
+	</list>
+	</property>
+	
+	<property name="email">
+	<set>
+	<value>aaa@gmail.com</value>
+	<value>bbb@gmail.com</value>
+	<value>ccc@gmail.com</value>
+	<value>ddd@gmail.com</value>
+	<value>ddd@gmail.com</value>
+	</set>
+	</property>
+	
+	<property name="course">
+	<map>
+	<entry key="1"><value>java</value></entry>
+	<entry key="2"><value>php</value></entry>
+	<entry key="3"><value>.net</value></entry>
+	<entry key="3"><value>python</value></entry>
+	</map>
+	</property>
+	</bean>
+	
+	</beans>

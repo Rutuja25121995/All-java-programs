@@ -1,0 +1,23 @@
+package com.tech.dao;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.tech.dto.Employee;
+
+@Repository
+public class Employee_Dao {
+
+	public Employee_Dao() {
+		System.out.println("inside Employee_Dao constructor");
+	}
+
+	@Autowired
+	SessionFactory sessionFactory;
+	public boolean createEmployee(Employee employee) {
+		System.out.println("inside Employee_Dao.createEmployee()");
+		
+		return true;
+	}
+}

@@ -1,0 +1,50 @@
+package com.example.demo.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+import com.example.demo.dao.book_dao;
+import com.example.demo.dto.Book;
+
+
+@Service
+public class book_service {
+
+//	@Autowired
+//	StudentDao studentDao;
+//
+//	public Student createStudent(Student student) {
+//		System.out.println("inside studentDao.createStudent()" + student);
+//		Student stud = studentDao.save(student);
+//		System.out.println("student saved in database");
+//		return stud;
+//
+//	}
+	
+	public book_service() {
+		System.out.println("inside book_service() constructor ");
+	}
+	
+	@Autowired
+	book_dao bookdao;
+	
+	public Book createBook(Book book) {
+		Book b1 =bookdao.save(book);
+		return b1;
+	}
+	
+	public Iterable<Book> getAllBooks() {
+	Iterable<Book>	b1=bookdao.findAll();
+		return b1;
+	}
+	
+	public Optional<Book> deletebook(int id) {
+		Optional<Book> b1=bookdao.findById(id);
+		bookdao.deleteById(id);
+		return b1;
+	}
+	
+}

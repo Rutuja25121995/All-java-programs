@@ -1,0 +1,36 @@
+package com.tech;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class sign_up_servlet extends HttpServlet{
+	
+	public sign_up_servlet() {
+		super();
+   System.out.println("inside constructor");
+	}
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String firstname=req.getParameter("fname");
+		System.out.println(firstname);
+		String lastname=req.getParameter("lname");
+		System.out.println(lastname);
+		String email=req.getParameter("email");
+		System.out.println(email);
+		String mobileno=req.getParameter("mobileno");
+		System.out.println(mobileno);
+		
+		
+	}
+
+}

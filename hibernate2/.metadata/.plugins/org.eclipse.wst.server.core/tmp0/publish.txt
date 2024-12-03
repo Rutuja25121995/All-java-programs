@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Tue Jun 20 19:32:00 IST 2023
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\shree\\Documents\\hibernate2\\Login\\src\\main\\webapp\\WEB-INF\\lib\\spring-web-5.3.25.jar=WEB-INF/lib/spring-web-5.3.25.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\shree\\Documents\\hibernate2\\Servlet_Login_Project\\src\\main\\webapp\\WEB-INF\\lib\\spring-web-5.3.25.jar=WEB-INF/lib/spring-web-5.3.25.jar

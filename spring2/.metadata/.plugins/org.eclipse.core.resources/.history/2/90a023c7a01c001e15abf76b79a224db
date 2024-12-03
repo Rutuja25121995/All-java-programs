@@ -1,0 +1,22 @@
+package com.tech.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tech.dto.Employee;
+
+@Service
+public class Employee_Service {
+
+	public Employee_Service() {
+		System.out.println("inside Employee_Service constructor");
+	}
+	
+	@Autowired
+	Employee_Dao employee_dao;
+	public boolean createEmployee(Employee employee) {
+		System.out.println("inside Employee_Dao.createEmployee()");
+		
+		return true;
+	}
+}

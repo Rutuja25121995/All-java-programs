@@ -1,0 +1,18 @@
+package com.tech;
+
+public class Student implements Registration{
+	private String name;
+	private String college;
+
+	public String getStudentDetails() {
+		return name;
+	}
+	@Override
+	public void StudentDetails(String name) {
+		this.name=name;
+		
+		
+	}
+	
+
+}

@@ -1,0 +1,60 @@
+
+
+LoginDao ---> DB connection (HB)
+
+User --> username , password 
+configuration.cfg.xml
+(db releation connection )
+Annotation 
+
+
+
+<SessionFactory >--session.save ()
+
+Start mysql db
+
+create Schema Spring_HB_Project_57
+
+
+add the hibernate jar in lib folder 
+
+
+
+Validate user success create the Employee in db 
+
+Table created 
+
+POJO 
+
+EmloyeeControlller 
+EmpoyeeService
+EmployeeDao
+
+
+getAllEmployeee 
+
+
+for(Employee ee: emplist)
+{
+Sysout(ee.getid())
+Sysout(ee.getname())
+}
+
+
+
+     <c:forEach  items="${EMP_LIST}" var="employee">
+            <tr>
+             <td><c:out value="${employee.id}" /></td>
+                <td><c:out value="${employee.fname}" /></td>
+                <td><c:out value="${employee.lname}" /></td>
+                <td><c:out value="${employee.email}" /></td>
+      		  <td><c:out value="${employee.phone}" /></td>
+
+ 
+ 
+ 
+ http://localhost:8085/MVC_MiniProject_Day4/deleteemp?id=
+ 
+ 
+ http://localhost:8085/MVC_MiniProject_Day4/getAllEmployee?
+
